@@ -1,14 +1,18 @@
 {
-  "name": "vite-project",
-  "private": true,
+  "name": "car-spotter-client",
+  "description": "car spotter client",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
+  "author": "car spotter",
+  "license": "MIT",
   "scripts": {
     "dev": "node server",
     "build": "npm run build:client && npm run build:server",
     "build:client": "vite build --ssrManifest --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
-    "preview": "cross-env NODE_ENV=production node server"
+    "preview": "cross-env NODE_ENV=production node server",
+    "prepare": "husky"
   },
   "dependencies": {
     "compression": "^1.7.4",
@@ -28,6 +32,26 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
     "typescript": "~5.6.3",
-    "vite": "^5.4.9"
+    "vite": "^5.4.9",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2"
+  },
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix",
+      "prettier --cache --list-different --write"
+    ]
   }
 }
