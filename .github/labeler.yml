@@ -1,0 +1,25 @@
+# issue, pr 적용 여부
+enable:
+  issues: false
+  prs: true
+
+# 라벨 설정
+labels:
+  '⭐️ feat':
+    include:
+      - '\b[FEAT]\b'
+  '🐛 fix':
+    include:
+      - '\b[FIX]\b'
+  '📃 docs':
+    include:
+      - '\b[DOCS]\b'
+  '🔨 refactor':
+    include:
+      - '\b[REFACTOR]\b'
+  '⚙️ chore':
+    include:
+      - '\b[CHORE]\b'
+  '🎨 style':
+    include:
+      - '\b[STYLE]\b'
