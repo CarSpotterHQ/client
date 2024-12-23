@@ -1,4 +1,4 @@
-import { TestIcon } from "./components/Icons";
+import { TestIcon } from './components/Icons';
 
 function App() {
   return (
