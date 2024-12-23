@@ -7,19 +7,19 @@ enable:
 labels:
   '⭐️ feat':
     include:
-      - '\b[FEAT]\b'
+      - '\bFEAT\b'
   '🐛 fix':
     include:
-      - '\b[FIX]\b'
+      - '\bFIX\b'
   '📃 docs':
     include:
-      - '\b[DOCS]\b'
+      - '\bDOCS\b'
   '🔨 refactor':
     include:
-      - '\b[REFACTOR]\b'
+      - '\bREFACTOR\b'
   '⚙️ chore':
     include:
-      - '\b[CHORE]\b'
+      - '\bCHORE\b'
   '🎨 style':
     include:
-      - '\b[STYLE]\b'
+      - '\bSTYLE\b'
