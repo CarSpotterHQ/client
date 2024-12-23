@@ -1,8 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
-// 로그인 상태를 나타내는 변수
-const isLogin = true;
+import ProtectedLayout from "./../layout/ProtectedLayout";
 
 // 임시로 생성
 const HomePage = () => <h1>홈페이지</h1>;
@@ -13,12 +11,14 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
+        {/* public route */}
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route
-          path="/protected"
-          element={isLogin ? <ProtectedPage /> : <Navigate to="/login" />}
-        />
+
+        {/* protected route */}
+        <Route element={<ProtectedLayout />}>
+          <Route path="/protected" element={<ProtectedPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
