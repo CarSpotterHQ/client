@@ -1,10 +1,11 @@
 import { TestIcon } from './components/Icons';
+import Providers from './providers';
 
 function App() {
   return (
-    <div className="text-red-500">
+    <Providers>
       <TestIcon />
-    </div>
+    </Providers>
   );
 }
 
