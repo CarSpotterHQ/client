@@ -1,5 +1,13 @@
+import { ErrorAfter2s } from './components/ErrorAfter2s';
+import Providers from './providers';
+
 function App() {
-  return <div className="text-red-500">App</div>;
+  return (
+    <Providers>
+      {/* <TestIcon /> */}
+      <ErrorAfter2s />
+    </Providers>
+  );
 }
 
 export default App;

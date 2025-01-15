@@ -1,28 +1,19 @@
-import axios, {
-  AxiosError,
-  AxiosInstance,
-  AxiosResponse,
-  InternalAxiosRequestConfig,
-} from "axios";
+import axios, { AxiosError, AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 
 const axiosInstance: AxiosInstance = axios.create({
   // baseURL:
+  withCredentials: true,
   headers: {
-    "Content-Type": "application/json;charset=utf-8",
+    'Content-Type': 'application/json;charset=utf-8',
   },
 });
 
 // 요청 인터셉터
 axiosInstance.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
-    // token 확인 로직 필요
-    if (true) {
-      // config.headers.Authorization = `Bearer ${token}`
-    }
-
     return config;
   },
-  (error) => {
+  error => {
     return Promise.reject(error);
   }
 );
@@ -34,13 +25,10 @@ axiosInstance.interceptors.response.use(
   },
   async (error: AxiosError) => {
     if (error.response?.status === 401) {
-      // 토큰 만료 여부 확인 후 재발급 로직 필요
-
+      // 로그아웃 처리나 리다이렉트 로직 추가 필요
       if (!error.config || !error.config.headers) {
         return Promise.reject(error);
       }
-
-      error.config.headers.set("Authorization", `Bearer NEW_TOKEN`);
 
       try {
         const response = await axios.request(error.config);
