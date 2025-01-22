@@ -1,8 +1,8 @@
-import axiosInstance from "./axiosInstance";
+import axiosInstance from './axiosInstance';
 
 export default async function apiGetUserInfo() {
   try {
-    const reponse = await axiosInstance.get("");
+    const _reponse = await axiosInstance.get('');
   } catch (error) {
     console.error(error);
   }
