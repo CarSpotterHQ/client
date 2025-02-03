@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ProtectedLayout from './../layout/ProtectedLayout';
+// import ProtectedLayout from './layout/ProtectedLayout';
 
 // 임시로 생성
 const HomePage = () => <h1>홈페이지</h1>;
@@ -16,7 +16,7 @@ const Router = () => {
         <Route path="/login" element={<LoginPage />} />
 
         {/* protected route */}
-        <Route element={<ProtectedLayout />}>
+        <Route>
           <Route path="/protected" element={<ProtectedPage />} />
         </Route>
       </Routes>

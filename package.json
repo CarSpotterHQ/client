@@ -16,6 +16,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@suspensive/react": "^2.18.6",
+    "axios": "^1.7.7",
     "@tanstack/react-query": "^5.62.8",
     "compression": "^1.7.4",
     "express": "^5.0.1",
