@@ -1,15 +1,10 @@
-import axios, {
-  AxiosError,
-  AxiosInstance,
-  AxiosResponse,
-  InternalAxiosRequestConfig,
-} from "axios";
+import axios, { AxiosError, AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 
 const axiosInstance: AxiosInstance = axios.create({
   // baseURL:
   withCredentials: true,
   headers: {
-    "Content-Type": "application/json;charset=utf-8",
+    'Content-Type': 'application/json;charset=utf-8',
   },
 });
 
@@ -18,7 +13,7 @@ axiosInstance.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     return config;
   },
-  (error) => {
+  error => {
     return Promise.reject(error);
   }
 );

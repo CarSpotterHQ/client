@@ -1,26 +1,24 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ProtectedLayout from './../layout/ProtectedLayout';
-
-// 임시로 생성
-const HomePage = () => <h1>홈페이지</h1>;
-const LoginPage = () => <h1>로그인 페이지</h1>;
-const ProtectedPage = () => <h1>로그인 후 접근 가능한 페이지</h1>;
+import { Route, Routes } from 'react-router';
+import PenaltyPage from '@//pages/PenaltyPage';
+import Layout from './layout/Layout';
 
 const Router = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* public route */}
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
+    <Routes>
+      <Route element={<Layout />}>
+        {/* 영률님 파트 */}
+        <Route path="/" element={<div>영률님 파트</div>} />
 
-        {/* protected route */}
-        <Route element={<ProtectedLayout />}>
-          <Route path="/protected" element={<ProtectedPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        {/* 중원 파트 */}
+        <Route path="/penalty" element={<PenaltyPage />} />
+
+        {/* 예린님 파트 */}
+        <Route path="/yerin" element={<div>예린님 파트</div>} />
+
+        <Route path="*" element={<div>Not Found</div>} />
+      </Route>
+    </Routes>
   );
 };
 

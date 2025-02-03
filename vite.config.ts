@@ -8,6 +8,8 @@ export default defineConfig({
   plugins: [react(), svgr({ include: '**/*.svg' })],
   resolve: {
     // eslint-disable-next-line no-undef
-    alias: [{ find: '@/', replacement: path.resolve(__dirname, './src/*') }],
+    alias: {
+      '@': path.resolve(__dirname, 'src'), // ✅ @를 src 경로로 설정
+    },
   },
 });
