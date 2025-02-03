@@ -1,11 +1,10 @@
-import { ErrorAfter2s } from './components/ErrorAfter2s';
 import Providers from './providers';
+import Router from './router';
 
 function App() {
   return (
     <Providers>
-      {/* <TestIcon /> */}
-      <ErrorAfter2s />
+      <Router />
     </Providers>
   );
 }

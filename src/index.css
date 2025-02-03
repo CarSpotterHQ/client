@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Moneygraphy';
+  src: url('../src/assets/fonts/Moneygraphy-Pixel.otf') format('truetype');
+}
+
+body {
+  height: 100vh;
+  font-family: 'Moneygraphy';
+}
+
+#root {
+  height: 100vh;
+}
