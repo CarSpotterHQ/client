@@ -47,7 +47,7 @@ app.use('*all', async (req, res) => {
     } else {
       template = templateHtml;
       // eslint-disable-next-line import/extensions, import/no-unresolved
-      render = (await import('./dist/server/entry-server.js')).render;
+      render = (await import(`${process.cwd()}/dist/server/entry-server.js`)).render;
     }
 
     let didError = false;
