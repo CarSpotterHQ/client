@@ -1,20 +1,11 @@
-import { ErrorBoundary, ErrorBoundaryFallbackProps, Suspense } from '@suspensive/react';
+import { Suspense } from 'react';
 import { StrictPropsWithChildren } from '@/types/common';
 import QueryProvider from './QueryProvider';
-
-const ErrorBoundaryFallback = ({ reset, error }: ErrorBoundaryFallbackProps) => (
-  <>
-    <button onClick={reset}>reset</button>
-    <h1>{error.message}</h1>
-  </>
-);
 
 const Providers = ({ children }: StrictPropsWithChildren) => {
   return (
     <QueryProvider>
-      <ErrorBoundary fallback={ErrorBoundaryFallback}>
-        <Suspense>{children}</Suspense>
-      </ErrorBoundary>
+      <Suspense>{children}</Suspense>
     </QueryProvider>
   );
 };
