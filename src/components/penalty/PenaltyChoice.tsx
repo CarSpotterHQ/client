@@ -1,7 +1,7 @@
-import React, { MouseEvent } from 'react';
-import { PropsParamType } from './TimeSetting';
-import { BackIcon, QuestionMark } from '../Icons';
+import React from 'react';
+import { BackIcon, QuestionMark } from '@//components/Icons';
 import usePenaltyStore from '@/store/penaltyStore';
+import { PropsParamType } from './TimeSetting';
 
 const PenaltyChoice = ({ onNext }: PropsParamType) => {
   const { setPenalty } = usePenaltyStore();
@@ -20,10 +20,10 @@ const PenaltyChoice = ({ onNext }: PropsParamType) => {
   return (
     <div className="relative flex h-lvh flex-col items-center justify-center gap-[30px]">
       <BackIcon
-        onClick={() => onNext('back')}
         width={45}
         height={45}
         className="absolute left-4 top-3 cursor-pointer"
+        onClick={() => onNext('back')}
       />
       <div className="flex flex-col items-center justify-center">
         <div className="-translate-x-6 text-[32px] text-mainTextWhiteColor">대결에서 진 사람은</div>

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import MatchLink from '@/components/penalty/MatchLink';
 import PenaltyChoice from '@/components/penalty/PenaltyChoice';
 import PenaltySetting from '@/components/penalty/PenaltySetting';
 import SubMain from '@/components/penalty/SubMain';
 import TimeSetting from '@/components/penalty/TimeSetting';
-import MatchLink from '@/components/penalty/MatchLink';
 
 const PenaltyPage = () => {
   // const [registerData, setRegisterData] = useState();

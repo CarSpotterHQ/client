@@ -1,8 +1,8 @@
 import React from 'react';
-import { BackIcon, ExclamationMarkIcon, Match } from '../Icons';
-import { PropsParamType } from './TimeSetting';
-import usePenaltyStore from '@/store/penaltyStore';
+import { BackIcon, ExclamationMarkIcon, Match } from '@//components/Icons';
 import { getPenaltyAll } from '@/api/user';
+import usePenaltyStore from '@/store/penaltyStore';
+import { PropsParamType } from './TimeSetting';
 
 const MatchLink = ({ onNext }: PropsParamType) => {
   const { penalty } = usePenaltyStore();
@@ -15,10 +15,10 @@ const MatchLink = ({ onNext }: PropsParamType) => {
   return (
     <div className="relative flex h-lvh flex-col items-center justify-center gap-[80px]">
       <BackIcon
-        onClick={() => onNext('back')}
         width={45}
         height={45}
         className="absolute left-4 top-3 cursor-pointer"
+        onClick={() => onNext('back')}
       />
       <div className="flex flex-col items-center justify-center">
         <div className="text-[32px] text-mainTextWhiteColor">대결장을 친구에게</div>
@@ -33,7 +33,7 @@ const MatchLink = ({ onNext }: PropsParamType) => {
         <div className="px-8 text-[18px]">
           <div className="text-[#C0C0C0]">챌린지 주제</div>
           {/* 영률팀 파트에서 정보 받아야 됨 */}
-          <div className="text-mainTextWhiteColor">{'아무도 안 할 것 같은 재밌는 챌린지'}</div>
+          <div className="text-mainTextWhiteColor">아무도 안 할 것 같은 재밌는 챌린지</div>
         </div>
         <div className="px-8 text-[18px]">
           <div className="text-[#C0C0C0]">벌칙 내용</div>
@@ -47,7 +47,7 @@ const MatchLink = ({ onNext }: PropsParamType) => {
           // onClick={() => onNext('next')}
           onClick={apiTest}
         >
-          {'링크 공유하기'}
+          링크 공유하기
         </button>
       </div>
     </div>

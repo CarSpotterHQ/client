@@ -1,7 +1,7 @@
-import React from "react";
-import PenaltyPage from "@//pages/PenaltyPage";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./layout/Layout";
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import PenaltyPage from '@//pages/PenaltyPage';
+import Layout from './layout/Layout';
 
 const Router = () => {
   return (

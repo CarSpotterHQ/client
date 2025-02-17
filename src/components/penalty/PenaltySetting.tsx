@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { PropsParamType } from './TimeSetting';
-import { BackIcon, ExclamationMarkIcon } from '../Icons';
-import Input from '../Input';
+import { BackIcon, ExclamationMarkIcon } from '@//components/Icons';
+import Input from '@//components/Input';
 import usePenaltyStore from '@/store/penaltyStore';
+import { PropsParamType } from './TimeSetting';
 
 // TODO
 // 1. 입력
@@ -17,15 +17,15 @@ const PenaltySetting = ({ onNext }: PropsParamType) => {
 
   useEffect(() => {
     setCustomPenalty(penalty);
-  }, []);
+  }, [penalty]);
 
   return (
     <div className="relative flex h-lvh flex-col items-center justify-center gap-[30px]">
       <BackIcon
-        onClick={() => onNext('back')}
         width={45}
         height={45}
         className="absolute left-4 top-3 cursor-pointer"
+        onClick={() => onNext('back')}
       />
       <div className="flex flex-col items-center justify-center">
         <div className="-translate-x-6 text-[32px] text-mainTextWhiteColor">기억에 남을</div>
@@ -43,7 +43,7 @@ const PenaltySetting = ({ onNext }: PropsParamType) => {
 
       <div className="fixed bottom-5 left-1/2 flex -translate-x-1/2 flex-col bg-yellow-400">
         <button className="bg-yellow-700" onClick={onStepNext}>
-          {'다음'}
+          다음
         </button>
       </div>
     </div>

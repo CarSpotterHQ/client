@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { PropsType } from './SubMain';
-import { BackIcon, ExclamationMarkIcon } from '../Icons';
+import { BackIcon, ExclamationMarkIcon } from '@//components/Icons';
 import usePenaltyStore from '@/store/penaltyStore';
 
 export type PropsParamType = {
@@ -47,10 +46,10 @@ const TimeSetting = ({ onNext }: PropsParamType) => {
   return (
     <div className="relative flex h-lvh items-center justify-center">
       <BackIcon
-        onClick={() => onNext('back')}
         width={45}
         height={45}
         className="absolute left-4 top-3 cursor-pointer"
+        onClick={() => onNext('back')}
       />
       <div className="relative flex flex-col items-center justify-center">
         <div className="mb-[32px] text-[32px] text-mainTextWhiteColor">
@@ -63,8 +62,8 @@ const TimeSetting = ({ onNext }: PropsParamType) => {
               type="number"
               value={hour}
               ref={hourInput}
-              onChange={e => onValidationTime('hour', e.target.value)}
               className="mr-[8px] h-[48px] w-[68px] rounded-[24px] border-none bg-[#404040] text-center text-[30px] caret-transparent outline-none focus:text-mainGreenColor"
+              onChange={e => onValidationTime('hour', e.target.value)}
             />
             <label className="text-[30px] text-[#9C9C9C]" htmlFor="hour">
               시간
@@ -75,8 +74,8 @@ const TimeSetting = ({ onNext }: PropsParamType) => {
               id="minute"
               type="number"
               value={min.toString().padStart(2, '0')}
-              onChange={e => onValidationTime('min', e.target.value)}
               className="mr-[8px] h-[48px] w-[68px] rounded-[24px] border-none bg-[#404040] text-center text-[30px] caret-transparent outline-none focus:text-mainGreenColor"
+              onChange={e => onValidationTime('min', e.target.value)}
             />
             <label className="text-[30px] text-[#9C9C9C]" htmlFor="minute">
               분
@@ -87,7 +86,7 @@ const TimeSetting = ({ onNext }: PropsParamType) => {
 
       <div className="fixed bottom-5 left-1/2 flex -translate-x-1/2 flex-col bg-yellow-400">
         <button className="bg-yellow-700" onClick={onStepNext}>
-          {'다음'}
+          다음
         </button>
       </div>
     </div>

@@ -1,6 +1,6 @@
-import { StrictPropsWithChildren } from "@/types/common";
-import QueryProvider from "./QueryProvider";
-import { Suspense } from "react";
+import { Suspense } from 'react';
+import { StrictPropsWithChildren } from '@/types/common';
+import QueryProvider from './QueryProvider';
 
 const Providers = ({ children }: StrictPropsWithChildren) => {
   return (
