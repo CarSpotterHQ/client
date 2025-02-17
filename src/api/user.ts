@@ -1,9 +1,11 @@
 import axiosInstance from './axiosInstance';
 
-export default async function apiGetUserInfo() {
+export const getPenaltyAll = async () => {
   try {
-    const _reponse = await axiosInstance.get('');
+    const response = await axiosInstance.get('/api/v1/penalty/all');
+    return response;
   } catch (error) {
     console.error(error);
+    throw new Error('api error');
   }
-}
+};

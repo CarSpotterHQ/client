@@ -1,7 +1,7 @@
 import React from 'react';
-import { Clock } from '@//components/Icons';
+import { ClockIcon } from '@//components/Icons';
 
-type PropsType = {
+export type PropsType = {
   onNext: () => void;
 };
 
@@ -10,7 +10,7 @@ const SubMain = ({ onNext }: PropsType) => {
     <div className="flex h-lvh items-center justify-center">
       <div className="relative flex flex-col items-center justify-center">
         <div className="absolute top-[-100px]">
-          <Clock width={82} height={82} />
+          <ClockIcon width={82} height={82} />
         </div>
         <div className="text-[68px] text-mainTextWhiteColor">18:59:43</div>
         {/* 영률님 파트에서 설정한 부분을 받아서 렌더링해야 됨 */}

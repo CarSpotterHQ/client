@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 type User = {
   username: string;
@@ -12,11 +12,11 @@ type AuthState = {
   logout: () => void;
 };
 
-const useAuthStore = create<AuthState>((set) => ({
+const useAuthStore = create<AuthState>(set => ({
   isLoggedIn: false,
   user: null,
 
-  login: (userData) => set({ isLoggedIn: true, user: userData }),
+  login: userData => set({ isLoggedIn: true, user: userData }),
 
   logout: () => set({ isLoggedIn: false, user: null }),
 }));
